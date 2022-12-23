@@ -5,11 +5,12 @@ print(i*42)
 age_in_month = 12*17
 print("month =", age_in_month) 
 #3
-age_in_years = 204/12
-print("years",age_in_years)
+age_in_years = int(age_in_month/12)
+print("years =",age_in_years)
 #4
-my_age = "Му name is Dmytro and I’m 17 years old"
-print(my_age)
+my_age = "Му name is Dmytro and I’m" ,age_in_years," years old"
+print(str(my_age))
+
 #5
 comparison = 1
 z = (comparison ==1)
@@ -24,5 +25,6 @@ a=2
 b=5
 c=6
 
-d=(2*5+6)**2
-print(d)
+d=(a*b+c)**a
+print(str(d))
+#
