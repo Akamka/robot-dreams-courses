@@ -8,8 +8,7 @@ print("month =", age_in_month)
 age_in_years = int(age_in_month/12)
 print("years =",age_in_years)
 #4
-my_age = "Му name is Dmytro and I’m" ,age_in_years," years old"
-print(str(my_age))
+print(f"my name is Dmytro and Im {age_in_years} years old")
 
 #5
 comparison = 1
@@ -25,6 +24,6 @@ a=2
 b=5
 c=6
 
-d=(a*b+c)**a
+d=str((a*b+c)**a)
 print(str(d))
 #
