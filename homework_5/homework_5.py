@@ -1,18 +1,22 @@
-a = input("enter the text: ")
-#number is even or odd
-if a.isdigit() is True:
-    
-    if int(a) % 2 == 0:
-        print(f"number:{a} - is even" )
-    else:
-        print(f"number:{a} - is odd")
-                
-#string have a small latter or capital
-elif a.isalpha() is True:
-    if a.isupper():
-        print(f"text: {a} - have a capital letter ")
-    elif a.islower():
-        print(f"text: {a} - have a small letter")
+txt = input("Введіь текст: ")
 
-else: 
-    print(f"{a} - its a symbol")
+for i in txt:
+    if i.isdigit():
+        if int(i) % 2 == 0:
+            print(f'Ця число {i} - парне')
+        else:
+            print(f'Ця число {i} - непарне')
+    elif i.isalpha():
+        if i.islower():
+            print(f'Ця буква {i} - маленька')
+        else:
+            print(f"Ця буква {i} - велика")
+            
+    else:
+        print("це символ")
+        
+import time
+
+while True:
+    print("I love Python")
+    time.sleep(4.2)
