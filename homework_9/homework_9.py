@@ -1,11 +1,14 @@
 
+n = int(input("Введіть номер елемента у послідовності Фібоначчі: "))
 def fibonacci(n):
-    n = input("Enter a number of fibonacci element: ")
-    n = int(n)
-    a, b = 1, 1
-    for i in range(n):
-        yield a
-        a, b = b, a + b
+    a = 1
+    b = 0
+    for _ in range(n):
+        c = a + b
+        a = b
+        b = c
+        yield b
+for d in fibonacci(n):
+    value = d
+print(value)
 
-data = list(fibonacci(10))
-print(data)
