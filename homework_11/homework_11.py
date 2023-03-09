@@ -14,10 +14,10 @@ Y випадку виникнення будь-якої помилки вона 
 
 import time
 
-def decorator(func):
-    def wrapper():
+def decorator(func, *args, **kwargs):
+    def wrapper(*args, **kwargs):
         print("current time is:", time.strftime('%H'':''%M'))
-        func()
+        return func()
     return wrapper
 
 @decorator
@@ -30,31 +30,42 @@ show()
 class custom_exception:
     def __init__(self, value):
         self.value = value
+        
+    
     def __enter__(self):
         print("==========")
+        return True
+    
     def __exit__(self, type, value, trace):
-        print("==========")
+        if value == self:
+            print("==========")
+            return True
 
 with custom_exception(1) as some_value:
     try:
         n = input("enter a number: ")
         n = int(n)
-        print("its ok")
+        print("its a good number")
     except Exception:
         print("this is not a number")
         print("Custom exception is occured")
         
 
 #(4)
-print("write a number \"12345\" to skip this part of program")
+
 while True:
     
     try:
-        a = int(input("Enter a something number: "))
-        if a == 12345:
+        
+        print("write a number. If you want exception - print string")
+        n = input("enter a number: ")
+        n = int(n)
+        print("its ok")
+        if n == str:
             break
     except Exception:
         print(f"this is a {Exception} exception")
+        break
 
 
 #(5)
