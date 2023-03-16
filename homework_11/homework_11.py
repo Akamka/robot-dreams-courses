@@ -17,7 +17,7 @@ import time
 def decorator(func, *args, **kwargs):
     def wrapper(*args, **kwargs):
         print("current time is:", time.strftime('%H'':''%M'))
-        return func()
+        return func(*args,**kwargs)
     return wrapper
 
 @decorator
@@ -37,9 +37,10 @@ class custom_exception:
         return True
     
     def __exit__(self, type, value, trace):
-        if value == self:
-            print("==========")
-            return True
+        if value:
+            print(value)
+        print('==========')
+        return True
 
 with custom_exception(1) as some_value:
     try:
@@ -56,16 +57,15 @@ with custom_exception(1) as some_value:
 while True:
     
     try:
-        
-        print("write a number. If you want exception - print string")
-        n = input("enter a number: ")
+        print('==========')
+        n = input('enter a number: ')
         n = int(n)
-        print("its ok")
-        if n == str:
-            break
-    except Exception:
-        print(f"this is a {Exception} exception")
-        break
+    except Exception as e:
+        print(e)
+    finally:
+        print('==========')
+    
+
 
 
 #(5)
@@ -81,13 +81,17 @@ with custom_exception(1) as some_value:
     finally:
         print("hello lector!")
 
+
+
 #(2)
 
 class MyCustomException(Exception):
     pass
 raise MyCustomException("Custom exception is occured")
 
-#:)
+
+
+
 
 
 
