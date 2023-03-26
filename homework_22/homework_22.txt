@@ -34,11 +34,11 @@ CREATE TABLE IF NOT EXISTS purchases(
 );
 
 2:
-SELECT * FROM purchase JOIN users ON users.id = purchase.user_id;
+SELECT purchases.id, purchases.date, users.first_name, users.last_name FROM purchases JOIN users ON purchases.user_id = users.id;
 
 
 3:
-SELECT users.id, users.first_name, users.last_name, books.title FROM users,books, purchase ON users.id = purchase.user_id
+SELECT users.id, users.first_name, users.last_name, books.title FROM users JOIN purchases ON users.id = purchases.user_id JOIN books ON purchases.book_id = books.id ORDER BY users.id;
 
 
 4:
