@@ -1,0 +1,8 @@
+1 - SELECT * FROM users WHERE age > 30
+
+2 - SELECT COUNT(*) FROM users WHERE age > 30
+
+3 - SELECT age, COUNT(*) FROM users GROUP BY age
+
+
+4 -SELECT age, COUNT(*) as count FROM users GROUP BY age ORDER BY COUNT(*) DESC, age ASC;
